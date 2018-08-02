@@ -1261,7 +1261,7 @@ struct bitWriteStaticExpander {
     bitWriteStaticExpander < channel - 1 > ()(value);
   }
 
-  void operator() (const uint8_t &count, const uint8_t * const &channels) const {
+  void operator() (const uint8_t &count, const volatile uint8_t * const &channels) const {
 #ifdef SOFTPWM_OUTPUT_DELAY
     bitWriteStatic<channel>((count + channel) < channels[channel]);
 #else  //SOFTPWM_OUTPUT_DELAY
@@ -1274,7 +1274,7 @@ struct bitWriteStaticExpander {
 template <>
 struct bitWriteStaticExpander < -1 > {
   void operator() (bool) const {}
-  void operator() (const uint8_t &, const uint8_t* const &) const {}
+  void operator() (const uint8_t &, const volatile uint8_t* const &) const {}
 };
 
 template <int channel>
@@ -1388,7 +1388,7 @@ class CSoftPWM {
     }
 
   private:
-    uint8_t _channels[num_channels];
+    volatile uint8_t _channels[num_channels];
     uint8_t _count;
 };
 } // namespace
