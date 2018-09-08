@@ -48,7 +48,7 @@
 #define SOFTPWM_DEFINE_PIN5_CHANNEL_INVERT(CHANNEL) SOFTPWM_DEFINE_CHANNEL_INVERT(CHANNEL, DDRB, PORTB, PORTB5)
 
 // arduino:standard or arduino:eightanalogoutputs variants
-#elif defined(__AVR_ATmega48__) || defined(__AVR_ATmega48A__) || defined(__AVR_ATmega48P__) || defined(__AVR_ATmega48PA__) || defined(__AVR_ATmega88__) || defined(__AVR_ATmega88A__) || defined(__AVR_ATmega88P__) || defined(__AVR_ATmega88PA__) || defined(__AVR_ATmega168__) || defined(__AVR_ATmega168A__) || defined(__AVR_ATmega168P__) || defined(__AVR_ATmega168PA__) || defined(__AVR_ATmega328__) || defined(__AVR_ATmega328P__)
+#elif defined(__AVR_ATmega8__) || defined(__AVR_ATmega8A__) || defined(__AVR_ATmega48__) || defined(__AVR_ATmega48A__) || defined(__AVR_ATmega48P__) || defined(__AVR_ATmega48PA__) || defined(__AVR_ATmega48PB__) || defined(__AVR_ATmega88__) || defined(__AVR_ATmega88A__) || defined(__AVR_ATmega88P__) || defined(__AVR_ATmega88PA__) || defined(__AVR_ATmega88PB__) || defined(__AVR_ATmega168__) || defined(__AVR_ATmega168A__) || defined(__AVR_ATmega168P__) || defined(__AVR_ATmega168PA__) || defined(__AVR_ATmega168PB__) || defined(__AVR_ATmega328__) || defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328PB__)
 #define SOFTPWM_DEFINE_PIN0_CHANNEL(CHANNEL) SOFTPWM_DEFINE_CHANNEL(CHANNEL, DDRD, PORTD, PORTD0)
 #define SOFTPWM_DEFINE_PIN0_CHANNEL_INVERT(CHANNEL) SOFTPWM_DEFINE_CHANNEL_INVERT(CHANNEL, DDRD, PORTD, PORTD0)
 #define SOFTPWM_DEFINE_PIN1_CHANNEL(CHANNEL) SOFTPWM_DEFINE_CHANNEL(CHANNEL, DDRD, PORTD, PORTD1)
@@ -366,7 +366,7 @@
 #define SOFTPWM_DEFINE_PINA15_CHANNEL(CHANNEL) SOFTPWM_DEFINE_PIN69_CHANNEL(CHANNEL)
 #define SOFTPWM_DEFINE_PINA15_CHANNEL_INVERT(CHANNEL) SOFTPWM_DEFINE_PIN69_CHANNEL_INVERT(CHANNEL)
 
-#elif defined(__AVR_ATmega164A__) || defined(__AVR_ATmega164P__) || defined(__AVR_ATmega164PA__) || defined(__AVR_ATmega324A__) || defined(__AVR_ATmega324P__) || defined(__AVR_ATmega324PA__) || defined(__AVR_ATmega644__)  || defined(__AVR_ATmega644A__) || defined(__AVR_ATmega644P__)  || defined(__AVR_ATmega644PA__) || defined(__AVR_ATmega1284__) || defined(__AVR_ATmega1284P__)
+#elif defined(__AVR_ATmega8535__) || defined(__AVR_ATmega16__)  || defined(__AVR_ATmega32__) || defined(__AVR_ATmega164A__) || defined(__AVR_ATmega164P__) || defined(__AVR_ATmega164PA__) || defined(__AVR_ATmega324A__) || defined(__AVR_ATmega324P__) || defined(__AVR_ATmega324PA__) || defined(__AVR_ATmega324PB__) || defined(__AVR_ATmega644__) || defined(__AVR_ATmega644A__) || defined(__AVR_ATmega644P__) || defined(__AVR_ATmega644PA__) || defined(__AVR_ATmega1284__) || defined(__AVR_ATmega1284P__)
 // mighty-1284p:avr-developers/Sanguino:sanguino variant - https://github.com/JChristensen/mighty-1284p/blob/v1.6.3/avr/variants/avr_developers/pins_arduino.h
 #if defined(ARDUINO_1284P_AVR_DEVELOPERS) || defined(ARDUINO_AVR_SANGUINO)
 #define SOFTPWM_DEFINE_PIN0_CHANNEL(CHANNEL) SOFTPWM_DEFINE_CHANNEL(CHANNEL, DDRB, PORTB, PORTB0)
