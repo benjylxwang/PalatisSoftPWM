@@ -1214,7 +1214,7 @@
   } \
   SOFTPWM_DEFINE_PINMODE( CHANNEL, PMODE, PORT, BIT )
 
-#define SOFTPWM_DEFINE_CHANNEL_INVERT( CHANNEL, PMODE, PORT, BIT ) \
+#define SOFTPWM_DEFINE_CHANNEL_INVERT(CHANNEL, PMODE, PORT, BIT) \
   namespace { \
   template <> \
   inline void bitWriteStatic<CHANNEL>(const bool value) { \
