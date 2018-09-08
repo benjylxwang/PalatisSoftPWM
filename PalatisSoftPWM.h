@@ -8,6 +8,11 @@
 #error Architecture not supported. PalatisSoftPWM currently only supports AVR microcontrollers.
 #endif
 
+// needed for ATmega8 compatibility
+#if !defined(TIMSK1) && defined(TIMSK)
+#define TIMSK1 TIMSK
+#endif  //!defined(TIMSK1) && defined(TIMSK)
+
 // helper macros
 #define SOFTPWM_DEFINE_PINMODE(CHANNEL, PMODE, PORT, BIT) \
   namespace { \
