@@ -16,7 +16,7 @@ This is a fork of the excellent https://github.com/Palatis/arduino-softpwm. It i
 
 <a id="installation"></a>
 #### Installation
-- Download the most recent version here: https://github.com/per1234/PalatisSoftPWM/archive/master.zip
+- Download the most recent release from: https://github.com/per1234/PalatisSoftPWM/releases
 - Using Arduino IDE 1.0.x:
   - Sketch > Import Library... > Add Library... > select the downloaded file > Open
 - Using Arduino IDE 1.5+:
