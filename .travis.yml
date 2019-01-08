@@ -62,6 +62,12 @@ before_install:
 
 
 script:
+  - check_library_structure "${SKETCHBOOK_FOLDER}/libraries/PalatisSoftPWM"
+
+  - check_library_properties "${SKETCHBOOK_FOLDER}/libraries/PalatisSoftPWM"
+
+  - check_keywords_txt "${SKETCHBOOK_FOLDER}/libraries/PalatisSoftPWM"
+
   # Compile all example sketches included with the library
   # build_sketch arguments: sketch name, fqbn, allow failure, IDE version/list/range
   - build_sketch "${SKETCHBOOK_FOLDER}/libraries/PalatisSoftPWM/examples" "arduino:avr:uno" "false" "oldest" "newest"
