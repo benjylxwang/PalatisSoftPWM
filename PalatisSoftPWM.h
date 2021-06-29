@@ -15,7 +15,7 @@
 
 // helper macros
 #define SOFTPWM_DEFINE_PINMODE(CHANNEL, PMODE, PORT, BIT) \
-  namespace { \
+  namespace Palatis { \
   template <> \
   inline void pinModeStatic<CHANNEL>(const uint8_t mode) { \
     if (mode == INPUT) { \
@@ -1206,7 +1206,7 @@
 #endif  //defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__)
 
 #define SOFTPWM_DEFINE_CHANNEL(CHANNEL, PMODE, PORT, BIT) \
-  namespace { \
+  namespace Palatis { \
   template <> \
   inline void bitWriteStatic<CHANNEL>(const bool value) { \
     bitWrite( PORT, BIT, value ); \
@@ -1215,7 +1215,7 @@
   SOFTPWM_DEFINE_PINMODE( CHANNEL, PMODE, PORT, BIT )
 
 #define SOFTPWM_DEFINE_CHANNEL_INVERT(CHANNEL, PMODE, PORT, BIT) \
-  namespace { \
+  namespace Palatis { \
   template <> \
   inline void bitWriteStatic<CHANNEL>(const bool value) { \
     bitWrite(PORT, BIT, !value); \
@@ -1225,21 +1225,21 @@
 
 #if defined(__AVR_ATtiny24__) || defined(__AVR_ATtiny44__) || defined(__AVR_ATtiny84__)
 #define SOFTPWM_DEFINE_OBJECT_WITH_PWM_LEVELS(CHANNEL_CNT, PWM_LEVELS) \
-  namespace { \
+  namespace Palatis { \
   CSoftPWM<CHANNEL_CNT, PWM_LEVELS> PalatisSoftPWM; \
   } \
   ISR(TIM1_COMPA_vect) { \
     interrupts(); \
-    PalatisSoftPWM.update(); \
+    Palatis::PalatisSoftPWM.update(); \
   }
 #else  //defined(__AVR_ATtiny24__) || defined(__AVR_ATtiny44__) || defined(__AVR_ATtiny84__)
 #define SOFTPWM_DEFINE_OBJECT_WITH_PWM_LEVELS(CHANNEL_CNT, PWM_LEVELS) \
-  namespace { \
+  namespace Palatis { \
   CSoftPWM<CHANNEL_CNT, PWM_LEVELS> PalatisSoftPWM; \
   } \
   ISR(TIMER1_COMPA_vect) { \
     interrupts(); \
-    PalatisSoftPWM.update(); \
+    Palatis::PalatisSoftPWM.update(); \
   }
 #endif  //defined(__AVR_ATtiny24__) || defined(__AVR_ATtiny44__) || defined(__AVR_ATtiny84__)
 
@@ -1247,7 +1247,7 @@
   SOFTPWM_DEFINE_OBJECT_WITH_PWM_LEVELS(CHANNEL_CNT, 0)
 
 #define SOFTPWM_DEFINE_EXTERN_OBJECT_WITH_PWM_LEVELS(CHANNEL_CNT, PWM_LEVELS) \
-  namespace { \
+  namespace Palatis { \
   extern CSoftPWM<CHANNEL_CNT, PWM_LEVELS> PalatisSoftPWM; \
   }
 
@@ -1255,7 +1255,7 @@
   SOFTPWM_DEFINE_EXTERN_OBJECT_WITH_PWM_LEVELS(CHANNEL_CNT, 0)
 
 // here comes the magic @o@
-namespace {
+namespace Palatis {
 template <int channel> inline void bitWriteStatic(bool value) {}
 template <int channel> inline void pinModeStatic(uint8_t mode) {}
 
